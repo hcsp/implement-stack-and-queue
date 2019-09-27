@@ -1,7 +1,6 @@
 package com.github.hcsp.datastructure;
 
 
-import java.util.List;
 
 public class Queue {
     private int[] data;
