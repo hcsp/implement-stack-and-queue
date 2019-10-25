@@ -58,6 +58,7 @@ public class Queue {
         }
         ListNode rm = dummmyHead.next;
         dummmyHead.next = dummmyHead.next.next;
+        size--;
         return rm.value;
     }
 }
