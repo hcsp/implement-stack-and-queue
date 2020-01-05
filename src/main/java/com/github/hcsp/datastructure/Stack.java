@@ -1,10 +1,10 @@
 package com.github.hcsp.datastructure;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Stack {
-    private List list = new LinkedList();
+    private List list = new ArrayList();
 
     // 将一个元素压入栈内
     public void push(int value) {
