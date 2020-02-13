@@ -1,11 +1,36 @@
 package com.github.hcsp.datastructure;
 
 public class Queue {
-    // 将一个元素添加到队列尾部
-    public void add(int value) {}
+    private Object[] queue;
+    private int head;
+    private int tail;
+    private int count;
 
-    // 将一个元素从队列头部移走
+    public Queue() {
+        queue = new Object[10];
+        this.head = 0;
+        this.tail = 0;
+        this.count = 0;
+    }
+
+    public Queue(int size) {
+        queue = new Object[size];
+        this.head = 0;
+        this.tail = 0;
+        this.count = 0;
+    }
+
+    public void add(int value) {
+        //如果不为空就放入下一个
+        queue[tail++ % (queue.length)] = value;
+        count++;
+    }
+
     public int remove() {
-        return 0;
+        if (count == 0) {
+            throw new IndexOutOfBoundsException("Queue empty");
+        }
+        count--;
+        return (int) queue[head++ % (queue.length)];
     }
 }
