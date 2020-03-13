@@ -8,6 +8,7 @@ public class Stack {
 
     // 将一个元素压入栈内
     public void push(int value) {
+
         stack.add(value);
     }
 
