@@ -10,7 +10,6 @@ public class Stack {
     public void push(int value) {
         arrayList.add(value);
     }
-
     // 从栈顶弹出一个元素
     public int pop() {
         return arrayList.remove(arrayList.size() - 1);

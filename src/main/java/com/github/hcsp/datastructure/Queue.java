@@ -10,7 +10,6 @@ public class Queue {
     public void add(int value) {
         arrayList.add(value);
     }
-
     // 将一个元素从队列头部移走
     public int remove() {
         return arrayList.remove(0);
