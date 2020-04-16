@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Queue {
 
-    private int tail = -1;//-1表示为空栈
+    private int tail = -1;
 
-    private int capacity = 8;//默认容量为8
+    private int capacity = 8;
 
-    private int[] array;//存放数据
+    private int[] array;
 
     public Queue() {
         array = new int[capacity];
@@ -16,13 +16,16 @@ public class Queue {
 
     // 将一个元素添加到队列尾部
     public void add(int value) {
-        //array[head] = value;
+        ensureCapacity();
+        array[tail] = value;
+
+    }
+
+    private void ensureCapacity() {
         if (++tail >= capacity) {
             capacity <<= 1;
             array = Arrays.copyOf(array, capacity);
         }
-        array[tail] = value;
-
     }
 
     // 将一个元素从队列头部移走

@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Stack {
 
-    private int top = -1;//-1表示为空栈
+    private int top = -1;
 
-    private int capacity = 8;//默认容量为8
+    private int capacity = 8;
 
-    private int[] array;//存放数据
+    private int[] array;
 
     public Stack() {
         this.array = new int[capacity];
@@ -16,12 +16,15 @@ public class Stack {
 
     // 将一个元素压入栈内
     public void push(int value) {
-        //如果超出容量，扩容
+        ensureCapacity();
+        array[top] = value;
+    }
+
+    private void ensureCapacity() {
         if (++top >= capacity) {
             capacity <<= 1;
             array = Arrays.copyOf(array, capacity);
         }
-        array[top] = value;
     }
 
     // 从栈顶弹出一个元素
