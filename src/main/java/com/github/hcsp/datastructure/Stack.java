@@ -16,7 +16,7 @@ public class Stack {
     // 将一个元素压入栈内
     public void push(int value) {
         if (count == size) {
-            size = size << 2;
+            size = size << 1;
             int[] tmp = elements;
             elements = Arrays.copyOf(tmp, size);
         }

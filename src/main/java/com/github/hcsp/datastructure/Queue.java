@@ -17,7 +17,7 @@ public class Queue {
     public void add(int value) {
         if (tail == size) {
             if (head == 0) {
-                size = size << 2;
+                size = size << 1;
                 int[] tmp = elements;
                 elements = Arrays.copyOf(tmp, size);
             } else {
