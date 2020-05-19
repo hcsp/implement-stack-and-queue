@@ -24,4 +24,14 @@ public class Queue {
         head = head.next;
         return node.value;
     }
+
+}
+
+class Node {
+    Node next;
+    int value;
+
+    Node(int value) {
+        this.value = value;
+    }
 }
