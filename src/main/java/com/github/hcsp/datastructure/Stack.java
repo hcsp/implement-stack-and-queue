@@ -1,17 +1,11 @@
 package com.github.hcsp.datastructure;
 
-import java.util.LinkedList;
-
 public class Stack {
-    private final LinkedList<Integer> stack = new LinkedList<>();
-
     // 将一个元素压入栈内
-    public void push(int value) {
-        stack.push(value);
-    }
+    public void push(int value) {}
 
     // 从栈顶弹出一个元素
     public int pop() {
-        return stack.pop();
+        return 0;
     }
 }
