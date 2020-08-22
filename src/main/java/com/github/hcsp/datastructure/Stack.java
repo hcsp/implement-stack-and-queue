@@ -6,6 +6,11 @@ public class Stack {
     private Integer[] data;
     private Integer size;
 
+    public Stack() {
+        this.size = 0;
+        this.data = new Integer[10];
+    }
+
     public Stack(int initSize) {
         if (initSize <= 0) {
             throw new IllegalArgumentException("栈的初始长度至少应为1");

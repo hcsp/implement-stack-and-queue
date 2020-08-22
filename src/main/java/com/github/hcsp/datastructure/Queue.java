@@ -7,7 +7,14 @@ public class Queue {
     private Integer tail;
     private Integer size;
 
-    private Queue(int initSize) {
+    public Queue() {
+        this.front = 0;
+        this.tail = 0;
+        this.size = 0;
+        this.data = new Integer[10];
+    }
+
+    public Queue(int initSize) {
         if (initSize <= 0) {
             throw new IllegalArgumentException("队列的初始长度应至少为1");
         }
