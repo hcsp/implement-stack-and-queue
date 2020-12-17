@@ -1,7 +1,5 @@
 package com.github.hcsp.datastructure;
 
-import java.util.LinkedList;
-
 public class Queue {
     private Node head = null;
 
@@ -40,11 +38,11 @@ class Node {
     int value;
     Node next;
 
-    public Node(int value) {
+    Node(int value) {
         this.value = value;
     }
 
-    public Node(int value, Node next) {
+    Node(int value, Node next) {
         this.value = value;
         this.next = next;
     }

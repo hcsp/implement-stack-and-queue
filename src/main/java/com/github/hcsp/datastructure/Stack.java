@@ -1,8 +1,5 @@
 package com.github.hcsp.datastructure;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 public class Stack {
     private Node head = null;
 
@@ -21,7 +18,7 @@ public class Stack {
         if (head == null) {
             return -1;
         }
-        int value=head.value;
+        int value = head.value;
         head = head.next;
         return value;
     }
