@@ -28,7 +28,7 @@ public class Queue {
         int val;
         Node next;
 
-        public Node(int val) {
+        private Node(int val) {
             this.val = val;
         }
     }

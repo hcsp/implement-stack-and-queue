@@ -23,7 +23,7 @@ public class Stack {
         int val;
         Node pre;
 
-        public Node(int val, Node pre) {
+        private Node(int val, Node pre) {
             this.val = val;
             this.pre = pre;
         }
