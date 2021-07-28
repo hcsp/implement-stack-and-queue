@@ -1,28 +1,22 @@
 package com.github.hcsp.datastructure;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Queue {
-    private final Object[] elements;
-    private int head;
-    private int tail;
+    private final List<Integer> container;
 
     public Queue() {
-        this.elements = new Object[16];
-        this.head = 0;
-        this.tail = 0;
+        this.container = new ArrayList<>();
     }
 
     // 将一个元素添加到队列尾部
     public void add(int value) {
-        elements[tail++] = value;
+        container.add(value);
     }
 
     // 将一个元素从队列头部移走
     public int remove() {
-        if (head == tail) {
-            return -1;
-        }
-        Object result = elements[head];
-        elements[head++] = null;
-        return (int) result;
+        return container.size() > 0 ? container.remove(0) : -1;
     }
 }
