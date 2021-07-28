@@ -1,22 +1,26 @@
 package com.github.hcsp.datastructure;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Stack {
-    private final List<Integer> container;
+    private final Object[] elements;
+    private int tail;
 
     public Stack() {
-        this.container = new ArrayList<>();
+        this.elements = new Object[16];
+        this.tail = 0;
     }
 
     // 将一个元素压入栈内
     public void push(int value) {
-        container.add(value);
+        this.elements[tail++] = value;
     }
 
     // 从栈顶弹出一个元素
     public int pop() {
-        return container.size() > 0 ? container.remove(container.size() - 1) : -1;
+        if (tail <= 0) {
+            return -1;
+        }
+        Object result = elements[tail - 1];
+        elements[tail--] = null;
+        return (int) result;
     }
 }
