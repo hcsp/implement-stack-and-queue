@@ -1,7 +1,9 @@
 package com.github.hcsp.datastructure;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Assertions;
@@ -27,5 +29,17 @@ public class StackQueueTest {
         Assertions.assertEquals(
                 numbers,
                 IntStream.range(0, 10).mapToObj(i -> queue.remove()).collect(Collectors.toList()));
+    }
+
+    @Test
+    public void emptyQueueTest() {
+        List<Integer> numbers = new ArrayList<>();
+        Queue queue = new Queue();
+        numbers.forEach(queue::add);
+        Assertions.assertThrows(NoSuchElementException.class, () -> queue.remove());
+
+        Stack stack = new Stack();
+        numbers.forEach(stack::push);
+        Assertions.assertThrows(NoSuchElementException.class, () -> stack.pop());
     }
 }
